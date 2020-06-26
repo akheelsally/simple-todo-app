@@ -25,6 +25,10 @@ class ProductList extends Component {
     this.setState({ filter: filter });
   };
 
+  setProductDetails = (id, filter) => {
+    this.context.setProductDetail(id, filter);
+  };
+
   render() {
     const products = this.context.productData[this.state.filter];
     return (
@@ -52,7 +56,12 @@ class ProductList extends Component {
         </h2>
         <div className="product-card_container">
           {products.map((data) => (
-            <ProductCard filter={this.state.filter} id={data.id} data={data} />
+            <ProductCard
+              filter={this.state.filter}
+              id={data.id}
+              data={data}
+              setProductDetails={this.setProductDetails}
+            />
           ))}
         </div>
       </div>

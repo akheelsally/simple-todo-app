@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router";
 
 class ProductCard extends Component {
+  handleDetails = (id) => {
+    this.props.setProductDetails(id, this.props.filter);
+    this.props.history.push("details");
+  };
   render() {
     const {
+      id,
       brand,
       model,
       price,
@@ -63,12 +69,16 @@ class ProductCard extends Component {
             <span className="spec_details-sub"> {optical_drive_details}</span>
           </div>
 
-          <span className="product-card_price">{price}</span>
-          <Link to="/details"> Learn More! </Link>
+          <div className="product-card_footer-container">
+            <button className="card-btn" onClick={() => this.handleDetails(id)}>
+              Learn More
+            </button>
+            <span className="product-card_price">{price}</span>
+          </div>
         </div>
       </div>
     );
   }
 }
 
-export default ProductCard;
+export default withRouter(ProductCard);
