@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Link,
@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <AppContextProvider>
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router basename="/">
           <div ref={node}>
             <Navbar open={open} setOpen={setOpen}></Navbar>
           </div>
