@@ -25,7 +25,7 @@ function Navbar({ open, setOpen }) {
           }}
         >
           <span className="navlink">
-            <Link to="/"> Products</Link>
+            <Link to="/products"> Products</Link>
           </span>
           <span className="navlink">
             <Link to="/cart"> Cart</Link>
