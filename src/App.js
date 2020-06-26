@@ -28,7 +28,7 @@ function App() {
             <Navbar open={open} setOpen={setOpen}></Navbar>
           </div>
           <Switch>
-            <Route exact path="/">
+            <Route exact path={process.env.PUBLIC_URL + "/"}>
               <Redirect to="/products" />
             </Route>
             <Route path="/products" component={Products} />
