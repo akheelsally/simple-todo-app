@@ -23,12 +23,12 @@ function App() {
   return (
     <div className="App">
       <AppContextProvider>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <div ref={node}>
             <Navbar open={open} setOpen={setOpen}></Navbar>
           </div>
           <Switch>
-            <Route exact path={process.env.PUBLIC_URL + "/"}>
+            <Route exact path="/">
               <Redirect to="/products" />
             </Route>
             <Route path="/products" component={Products} />
