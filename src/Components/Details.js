@@ -5,6 +5,15 @@ import { AppContext } from "../AppContext";
 class Details extends Component {
   static contextType = AppContext;
 
+  isNotValid = (prop, value) => {
+    return (
+      value === "" ||
+      prop.toLowerCase() === "price" ||
+      prop.toLowerCase() === "img" ||
+      prop.toLowerCase() === "id"
+    );
+  };
+
   render() {
     const currentProduct = this.context.detailProduct;
     const {
@@ -44,14 +53,18 @@ class Details extends Component {
             <span className="badge">{purpose}</span>
 
             {Object.entries(currentProduct).map((item) => {
-              console.log(`${item[0]} : ${item[1]}`);
-
+              const [prop, value] = item;
+              if (this.isNotValid(prop, value)) {
+                return;
+              }
               return (
                 <div className="spec_container">
                   <span className="spec_title">
                     <strong>{item[0]} </strong>
                   </span>
-                  <span className="spec_details"> {item[1]}</span>
+                  <span className="spec_details">
+                    {item[1] ? item[1] : "None"}
+                  </span>
                 </div>
               );
             })}

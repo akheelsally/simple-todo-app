@@ -15,6 +15,8 @@ import AboutUs from "./Components/AboutUs";
 import Details from "./Components/Details";
 import { AppContextProvider } from "./AppContext";
 import { useOnClickOutside } from "./hooks";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import "./fontawesome";
 
 function App() {
   const [open, setOpen] = useState(false);

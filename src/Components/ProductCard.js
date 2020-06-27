@@ -68,13 +68,12 @@ class ProductCard extends Component {
             <span className="spec_details">{optical_drive}</span>
             <span className="spec_details-sub"> {optical_drive_details}</span>
           </div>
-
-          <div className="product-card_footer-container">
-            <button className="card-btn" onClick={() => this.handleDetails(id)}>
-              Learn More
-            </button>
-            <span className="product-card_price">{price}</span>
-          </div>
+        </div>
+        <div className="product-card_footer-container">
+          <button className="card-btn" onClick={() => this.handleDetails(id)}>
+            Learn More
+          </button>
+          <span className="product-card_price">{price}</span>
         </div>
       </div>
     );

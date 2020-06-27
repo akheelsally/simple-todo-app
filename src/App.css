@@ -88,6 +88,10 @@ blockquote p {
   margin: 1rem auto 1.5rem;
 }
 
+.lg {
+  font-size: 1.25rem;
+}
+
 .content-container {
   padding: 0 1rem 2rem;
 }
@@ -106,7 +110,7 @@ blockquote p {
   position: absolute;
   top: 0;
   right: 1rem;
-  z-index: 1000;
+  z-index: 10000;
 }
 
 .navbar_navlinks_container {
@@ -119,6 +123,7 @@ blockquote p {
   min-height: 100vh;
   transition: all 0.2s ease-out;
   background-color: #186faf;
+  z-index: 9999;
 }
 
 .navlink,
@@ -139,7 +144,7 @@ a:visited {
 }
 
 .product-list_heading {
-  font-weight: 800;
+  font-weight: 400;
   color: #003e6b;
 }
 
@@ -151,28 +156,72 @@ a:visited {
 }
 
 .product-tab_container {
-  padding: 2rem 0 0;
-  border-bottom: 3px solid #dceefb;
-  margin: 0 0 1rem;
+  padding: 0;
+  border-bottom: 4px solid #1976d2;
+  margin: 0;
 }
 
 .tab-btn {
-  padding: 1rem 0.5rem;
-  border: 1px solid #dceefb;
+  padding: 1rem 0.5rem 0.25rem;
+  border: 1px solid #c5e3f8;
+  border-bottom: none;
   background-color: transparent;
-  color: #102a43;
-  font-weight: 600;
+  color: #1976d2;
+  font-weight: 800;
   border-radius: 0.5rem 0.5rem 0 0;
   letter-spacing: 0.05rem;
-  margin: 0 0.01rem 0 0;
-  z-index: 100;
+  margin: 0 0.01rem -1px 0;
   width: 100px;
   outline: none;
 }
 
+.tab-btn > svg {
+  display: block;
+  margin: auto;
+}
+
 .tab-btn.active {
-  background-color: #2680c2;
+  background-color: #1976d2;
   color: #dceefb;
+  border: 1px solid #dceefb;
+  border-bottom: none;
+}
+
+/*-------------filter section --------------------*/
+.filter-controls_container {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.filter-controls_container > div {
+  min-height: 125px;
+  padding: 0;
+  margin: 0;
+}
+/*------------- No Items -------------------------------*/
+
+.no_items {
+  padding: 2rem;
+}
+
+.no_items_content {
+  margin: 1rem auto;
+}
+
+.no_items_heading {
+  font-size: 1.62rem;
+  text-align: center;
+  font-weight: 400;
+}
+
+.no_items_text {
+  text-align: center;
+  color: #d64545;
+  max-width: 100%;
+  font-weight: 600;
 }
 /*--------------------------------product card -------------------------------*/
 
@@ -191,6 +240,7 @@ a:visited {
 
 .product-card_content {
   padding: 1.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .product-card_brand {
@@ -201,13 +251,14 @@ a:visited {
 
 .product-card_model {
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: #003e6b;
   margin: 0;
 }
 
 .badge {
   display: inline-block;
+  font-size: 0.75rem;
   font-weight: 300;
   color: #486581;
 }
@@ -220,6 +271,7 @@ a:visited {
   margin: 0;
   line-height: 1;
   color: #243b53;
+  font-size: 0.75rem;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -228,27 +280,32 @@ a:visited {
   margin: 0;
   line-height: 1;
   font-weight: 400;
+  font-size: 0.75rem;
   color: #102a43;
 }
 
 .spec_details-sub {
   margin: 0;
   line-height: 1;
+  font-size: 0.75rem;
   font-weight: 300;
   color: #829ab1;
 }
 
 .product-card_footer-container {
-  margin: 1.5rem 0 1rem;
+  margin: 0.5rem 0 0;
+  padding: 1rem 1rem;
+  border-top: 3px solid #c8d5e4;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  background-color: #d9e2ec;
 }
 
 .card-btn {
   display: inline-block;
   vertical-align: middle;
-  border: 2px solid #2680c2;
+  border: 1px solid #2680c2;
   color: #2680c2;
   background-color: transparent;
   padding: 0.75rem 0.5rem;
@@ -260,7 +317,24 @@ a:visited {
   vertical-align: middle;
   text-align: right;
   font-weight: 600;
-  color: #243b53;
+  color: #2680c2;
+}
+/*--------------------------------Details ------------------------------*/
+#details .spec_container {
+  border-bottom: 1px solid #d9e2ec;
+  padding: 0;
+}
+
+#details .spec_title,
+#details .spec_details {
+  padding: 0.5rem 1rem;
+  display: inline-block;
+}
+
+#details .spec_title {
+  background: #f0f4f8;
+  color: #0f609a;
+  width: 200px;
 }
 
 /*--------------------------------about us -------------------------------*/
@@ -284,6 +358,11 @@ a:visited {
   }
 
   .product-card_img {
+  }
+
+  .filter-controls_container {
+    align-items: baseline;
+    justify-content: space-between;
   }
 }
 
